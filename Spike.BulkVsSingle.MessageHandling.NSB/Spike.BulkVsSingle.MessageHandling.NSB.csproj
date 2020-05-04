@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.SlowCheetah" Version="3.2.26">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="NServiceBus" Version="7.2.4" />
+    <PackageReference Include="NServiceBus.Newtonsoft.Json" Version="2.2.0" />
+    <PackageReference Include="NServiceBus.Persistence.AzureStorage" Version="2.4.0" />
+    <PackageReference Include="NServiceBus.Transport.AzureServiceBus" Version="1.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Spike.BulkVsSingle.MessageHandling.Messages\Spike.BulkVsSingle.MessageHandling.Messages.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="AppSettings.Debug.json">
+      <IsTransformFile>true</IsTransformFile>
+      <DependentUpon>AppSettings.json</DependentUpon>
+    </None>
+    <None Update="AppSettings.json">
+      <TransformOnBuild>true</TransformOnBuild>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="AppSettings.Release.json">
+      <IsTransformFile>true</IsTransformFile>
+      <DependentUpon>AppSettings.json</DependentUpon>
+    </None>
+  </ItemGroup>
+
+</Project>

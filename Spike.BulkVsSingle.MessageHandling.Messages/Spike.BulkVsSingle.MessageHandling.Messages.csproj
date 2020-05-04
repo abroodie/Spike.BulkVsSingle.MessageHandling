@@ -1,0 +1,11 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Spike.BulkVsSingle.MessageHandling\Spike.BulkVsSingle.MessageHandling.csproj" />
+  </ItemGroup>
+
+</Project>
